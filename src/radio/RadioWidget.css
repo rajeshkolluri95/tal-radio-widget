@@ -1,0 +1,254 @@
+/* ============================
+   CONTAINER
+============================ */
+.tal-radio-container {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+/* ============================
+   HEADER
+============================ */
+.tal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tal-header-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2d2d2d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ============================
+   CHANNEL SELECTOR
+============================ */
+.tal-channel-box {
+  background: #fafafa;
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tal-channel-btn {
+  padding: 4px 12px;
+  font-size: 11px;
+  border-radius: 9999px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: 0 4px;
+}
+
+.tal-channel-btn:hover {
+  background: #f3e8ff;
+}
+
+.tal-channel-btn.active {
+  background: #7c3aed;
+  border-color: #7c3aed;
+  color: white;
+}
+
+/* ============================
+   NOW PLAYING
+============================ */
+.tal-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.tal-title img {
+  height: 16px;
+  width: 16px;
+}
+
+/* ============================
+   MAIN ROW
+============================ */
+.tal-main {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ============================
+   THUMBNAIL
+============================ */
+.tal-thumb {
+  position: relative;
+}
+
+.tal-thumb img {
+  width: 112px;
+  height: 112px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+}
+
+.tal-equalizer {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tal-equalizer div {
+  width: 4px;
+  height: 20px;
+  background: #c084fc;
+  margin: 0 2px;
+  border-radius: 4px;
+  animation: eqBounce 0.6s infinite ease-in-out;
+}
+
+@keyframes eqBounce {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1.2); }
+}
+
+/* ============================
+   DETAILS
+============================ */
+.tal-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tal-meta {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+/* ============================
+   PLAYER CONTROLS
+============================ */
+.tal-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.tal-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.tal-btn.play {
+  background: #d1fae5;
+}
+.tal-btn.pause {
+  background: #fee2e2;
+}
+
+.tal-mute-btn {
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.tal-mute-btn:hover {
+  background: #f3f4f6;
+}
+
+/* ============================
+   VOLUME SLIDER
+============================ */
+.custom-volume-slider {
+  width: 100%;
+  height: 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  background: #ddd; /* Fallback for unsupported browsers */
+}
+
+/* Chrome / Edge / Safari */
+.custom-volume-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 5px;
+  background: linear-gradient(
+    to right,
+    #7c3aed var(--fill, 0%),
+    #ddd var(--fill, 0%)
+  );
+}
+
+.custom-volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  background: #7c3aed;
+  border-radius: 50%;
+  margin-top: -5px; /* centers thumb */
+  cursor: pointer;
+}
+
+/* Firefox */
+.custom-volume-slider::-moz-range-track {
+  height: 4px;
+  border-radius: 5px;
+  background: linear-gradient(
+    to right,
+    #7c3aed var(--fill, 0%),
+    #ddd var(--fill, 0%)
+  );
+}
+
+.custom-volume-slider::-moz-range-progress {
+  height: 4px;
+  background: #7c3aed;
+  border-radius: 5px;
+}
+
+.custom-volume-slider::-moz-range-thumb {
+  height: 14px;
+  width: 14px;
+  background: #7c3aed;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ============================
+   CLOCK
+============================ */
+.tal-clock {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #666;
+}
