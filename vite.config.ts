@@ -10,13 +10,13 @@ export default defineConfig({
   plugins: [
     react(),
     svgr(),
-    peerDepsExternal(), // ensures peer deps are external
+    peerDepsExternal(),
     dts({
       insertTypesEntry: true,
       outDir: "dist",
     }),
   ],
-  server: {
+   server: {
     host: "::", // listen on all IPv6 addresses
     port: 3000,
   },
@@ -36,11 +36,13 @@ export default defineConfig({
     },
 
     rollupOptions: {
-      external: ["react", "react-dom"],
+      // Exclude peer deps and large libs from bundle
+      external: ["react", "react-dom", "firebase"],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          firebase: "firebase",
           "react/jsx-runtime": "jsxRuntime",
         },
         assetFileNames: "assets/[name][extname]",
