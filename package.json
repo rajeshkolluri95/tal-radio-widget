@@ -1,12 +1,11 @@
 {
   "name": "tal-radio-widget",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "style": "dist/assets/style.css",
-
   "exports": {
     ".": {
       "import": "./dist/index.esm.js",
@@ -15,21 +14,17 @@
     },
     "./style.css": "./dist/assets/style.css"
   },
-
   "files": [
     "dist"
   ],
-
   "sideEffects": [
     "*.css"
   ],
-
   "peerDependencies": {
     "react": ">=18.0.0",
     "react-dom": ">=18.0.0",
     "firebase": ">=12.0.0"
   },
-
   "devDependencies": {
     "@vitejs/plugin-react-swc": "^3.11.0",
     "vite": "^5.4.19",
@@ -38,7 +33,6 @@
     "autoprefixer": "^10.4.21",
     "rollup-plugin-peer-deps-external": "^2.2.4"
   },
-
   "scripts": {
     "dev": "vite",
     "build": "vite build",
