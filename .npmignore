@@ -1,0 +1,9 @@
+src/
+*.map
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.ico
+assets/
+robots.txt

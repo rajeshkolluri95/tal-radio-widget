@@ -79,6 +79,59 @@
   color: #222;
   margin-bottom: 10px;
 }
+.music-icon {
+  width: 16px;
+  height: 16px;
+ color: purple;}
+.radio-icon {
+  width: 20px;
+  height: 20px;
+  color: #22c55e; 
+}
+/* Purple-colored volume icon */
+/* Makes SVG/PNG icon purple */
+.volume-icon {
+  width: 18px;  /* you can adjust */
+  height: 18px;
+
+  /* Purple-600 filter */
+  filter: invert(23%) sepia(94%) saturate(7470%) hue-rotate(256deg) brightness(91%) contrast(97%);
+}
+
+
+/* Volume slider */
+.custom-volume-slider {
+  width: 120px;
+  height: 4px;
+  appearance: none;
+  background: linear-gradient(
+    to right,
+    #7c3aed var(--fill, 50%),
+    #e4e4e7 var(--fill, 50%)
+  );
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* SMALLER Purple Thumb */
+.custom-volume-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;         /* reduced size */
+  height: 10px;        /* reduced size */
+  background: #7c3aed; /* same purple as icon */
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.custom-volume-slider::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: #7c3aed;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 
 .tal-title img {
   height: 16px;
@@ -168,19 +221,68 @@
   cursor: pointer;
 }
 
-.tal-btn.play {
+/* Common circle button style */
+.tal-circle-btn {
+  width: 40px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(0,0,0,0.05);
+  background: transparent;
+  padding: 0;
+}
+
+/* PLAY button = soft green background */
+.tal-circle-btn.play {
   background: #d1fae5;
 }
-.tal-btn.pause {
+
+/* PAUSE button = soft red background */
+.tal-circle-btn.pause {
   background: #fee2e2;
 }
 
-.tal-mute-btn {
-  padding: 8px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: 0.2s;
+/* Base icon size */
+.tal-circle-btn .tal-icon {
+  width: 18px;
+  height: 18px;
 }
+
+/* PLAY icon = Green */
+.tal-circle-btn.play .tal-icon {
+  filter: invert(49%) sepia(58%) saturate(500%) hue-rotate(90deg)
+          brightness(90%) contrast(90%);
+}
+
+/* PAUSE icon = Red */
+.tal-circle-btn.pause .tal-icon {
+  filter: invert(32%) sepia(80%) saturate(1400%) hue-rotate(-10deg)
+          brightness(90%) contrast(90%);
+}
+
+
+.tal-mute-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  border-radius: 0; /* removes circle */
+  box-shadow: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.tal-mute-btn img.volume-icon {
+  width: 18px;
+  height: 18px;
+  filter: invert(23%) sepia(94%) saturate(7470%) hue-rotate(256deg) brightness(91%) contrast(97%);
+}
+
 .tal-mute-btn:hover {
   background: #f3f4f6;
 }

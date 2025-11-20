@@ -1,64 +1,43 @@
 {
-  "name": "tal-radio-widget",
-  "version": "0.1.0",
+  "name": "talradio-widget",
+  "version": "0.1.1",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-   "style": "dist/assets/style.css",
-
- "exports": {
-  ".": {
-    "import": "./dist/index.esm.js",
-    "require": "./dist/index.cjs.js",
-    "types": "./dist/index.d.ts"
+  "style": "dist/assets/style.css",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/assets/style.css"
   },
-  "./style.css": "./dist/assets/style.css"
-},
-
   "files": [
     "dist"
   ],
-
-"sideEffects": [
+  "sideEffects": [
     "*.css"
   ],
-
   "peerDependencies": {
     "react": ">=18.0.0",
-    "react-dom": ">=18.0.0"
+    "react-dom": ">=18.0.0",
+    "firebase": ">=12.0.0",
+     "lucide-react": ">=0.284.0"
   },
-
-  "dependencies": {
-    "firebase": "^12.3.0",
-    "react-router-dom": "^6.30.1",
-    "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7",
-    "vite-plugin-vercel": "^9.0.7"
-  },
-
   "devDependencies": {
-    "@eslint/js": "^9.32.0",
-    "@tailwindcss/typography": "^0.5.16",
-    "@types/rollup-plugin-peer-deps-external": "^2.2.6",
     "@vitejs/plugin-react-swc": "^3.11.0",
-    "autoprefixer": "^10.4.21",
-    "eslint": "^9.32.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "postcss": "^8.5.6",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "tailwindcss": "^3.4.17",
     "vite": "^5.4.19",
     "vite-plugin-dts": "^4.5.4",
-    "vite-plugin-svgr": "^4.5.0"
+    "vite-plugin-svgr": "^4.5.0",
+    "autoprefixer": "^10.4.21",
+    "lucide-react": "^0.284.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
   },
-
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:dev": "vite build --mode development",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "build:dev": "vite build --mode development"
   }
 }

@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [
     react(),
     svgr(),
-    peerDepsExternal(), // ensures peer deps are external
+    peerDepsExternal(),
     dts({
       insertTypesEntry: true,
       outDir: "dist",
@@ -36,18 +36,20 @@ export default defineConfig({
     },
 
     rollupOptions: {
-      external: ["react", "react-dom"],
+      // Exclude peer deps and large libs from bundle
+      external: ["react", "react-dom", "firebase", "lucide-react"],
       output: {
         globals: {
           react: "React",
           "react-dom": "ReactDOM",
+          firebase: "firebase",
           "react/jsx-runtime": "jsxRuntime",
         },
         assetFileNames: "assets/[name][extname]",
       },
     },
 
-    sourcemap: true,
+    sourcemap: false,
     emptyOutDir: true,
   },
 
