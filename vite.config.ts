@@ -16,7 +16,7 @@ export default defineConfig({
       outDir: "dist",
     }),
   ],
-   server: {
+  server: {
     host: "::", // listen on all IPv6 addresses
     port: 3000,
   },
@@ -37,7 +37,7 @@ export default defineConfig({
 
     rollupOptions: {
       // Exclude peer deps and large libs from bundle
-      external: ["react", "react-dom", "firebase"],
+      external: ["react", "react-dom", "firebase", "lucide-react"],
       output: {
         globals: {
           react: "React",
