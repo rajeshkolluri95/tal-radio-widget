@@ -13,19 +13,21 @@ import {
   runTransaction,
 } from "firebase/database";
 import { useFirebaseServices } from "../firebaseConfig";
+import { Music, Pause, Play, Radio, Volume2, VolumeX } from "lucide-react";
+
 
 // import Music from "./assets/music.svg";
-import Pause from "./assets/pause.svg";
-import Play from "./assets/play.svg";
-import Volume2 from "./assets/volume-2.svg";
-import VolumeX from "./assets/volume-x.svg";
-import Radio from "./assets/radio.svg?react";
+// import Pause from "./assets/pause.svg";
+// import Play from "./assets/play.svg";
+// import Volume2 from "./assets/volume-2.svg";
+// import VolumeX from "./assets/volume-x.svg";
+// import Radio from "./assets/radio.svg?react";
 import { getChannels } from "./apis";
 import { checkDefaultChannel } from "./utils";
 import SafeImage from "./ui/safe-image";
 import LiveClock from "./ui/live-clock";
 import "./RadioWidget.css";
-import MusicIcon from "./assets/music.svg?react";
+// import MusicIcon from "./assets/music.svg?react";
 
 interface Channel {
   _id: string;
@@ -310,7 +312,7 @@ const LiveRadioWidget: React.FC<AudioProps> = ({ firebaseConfig }) => {
           realtimeDb,
           `/talRadioCurrentListeners/${channel}/${listenerIdRef.current}`
         );
-        remove(listenerRef).catch(() => {});
+        remove(listenerRef).catch(() => { });
       }
     }
 
@@ -321,7 +323,7 @@ const LiveRadioWidget: React.FC<AudioProps> = ({ firebaseConfig }) => {
         realtimeDb,
         `/talRadioCurrentListeners/${channel}/${listenerIdRef.current}`
       );
-      remove(listenerRef).catch(() => {});
+      remove(listenerRef).catch(() => { });
     };
   }, [isPlaying, channel]);
 
@@ -512,7 +514,9 @@ const LiveRadioWidget: React.FC<AudioProps> = ({ firebaseConfig }) => {
       {/* Header */}
       <div className="tal-header">
         <h2 className="tal-header-title">
+          {/* <Radio className="radio-icon" /> */}
           <Radio className="radio-icon" />
+
           TALRadio – Listen, Feel and Act!
         </h2>
       </div>
@@ -527,9 +531,8 @@ const LiveRadioWidget: React.FC<AudioProps> = ({ firebaseConfig }) => {
               <button
                 key={lang}
                 onClick={() => handleChangeChannel(lang)}
-                className={`tal-channel-btn ${
-                  channel === lang ? "active" : ""
-                }`}
+                className={`tal-channel-btn ${channel === lang ? "active" : ""
+                  }`}
               >
                 {lang === "talradio"
                   ? "English"
@@ -542,7 +545,9 @@ const LiveRadioWidget: React.FC<AudioProps> = ({ firebaseConfig }) => {
 
       {/* Title */}
       <h3 className="tal-title">
-        <MusicIcon className="music-icon" />
+        <Music className="music-icon" />
+
+        {/* <MusicIcon className="music-icon" /> */}
         <span>{currentStreaming?.title || "Now Playing"}</span>
       </h3>
 
@@ -575,19 +580,30 @@ const LiveRadioWidget: React.FC<AudioProps> = ({ firebaseConfig }) => {
                 onClick={() => setIsPlaying(false)}
                 className="tal-circle-btn pause"
               >
-                <img src={Pause} className="tal-icon" />
+                {/* <img src={Pause} className="tal-icon" /> */}
+                <Pause className="tal-icon" />
+
               </button>
             ) : (
               <button
                 onClick={() => setIsPlaying(true)}
                 className="tal-circle-btn play"
               >
-                <img src={Play} className="tal-icon" />
+                {/* <img src={Play} className="tal-icon" /> */}
+                <Play className="tal-icon" />
+
               </button>
             )}
 
             <button onClick={() => setMute(!mute)} className="tal-mute-btn">
-              <img src={mute ? VolumeX : Volume2} className="volume-icon" />
+
+              {mute ? (
+                <VolumeX className="volume-icon" />
+              ) : (
+                <Volume2 cclassName="volume-icon" />
+              )}
+
+
             </button>
 
             <input

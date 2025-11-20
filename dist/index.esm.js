@@ -1,20 +1,20 @@
 import { jsx as t, jsxs as u } from "react/jsx-runtime";
-import * as h from "react";
-import { useMemo as I, useState as d, useEffect as g, useRef as R } from "react";
-import { getDatabase as z, off as S, ref as w, set as J, onDisconnect as $, runTransaction as V, remove as L, get as _, onValue as ee } from "firebase/database";
-import { getApps as te, getApp as ne, initializeApp as se } from "firebase/app";
-import { getStorage as re } from "firebase/storage";
-import { getFirestore as ae } from "firebase/firestore";
-const ie = (a) => I(() => {
-  if (!(a != null && a.apiKey))
+import { useMemo as I, useState as d, useEffect as f, useRef as b } from "react";
+import { getDatabase as V, off as z, ref as p, set as Z, onDisconnect as J, runTransaction as S, remove as M, get as $, onValue as _ } from "firebase/database";
+import { getApps as ee, getApp as te, initializeApp as ne } from "firebase/app";
+import { getStorage as Ae } from "firebase/storage";
+import { getFirestore as se } from "firebase/firestore";
+import { Radio as ae, Music as re, Pause as ie, Play as oe, VolumeX as le, Volume2 as ce } from "lucide-react";
+const de = (i) => I(() => {
+  if (!(i != null && i.apiKey))
     throw new Error("Missing Firebase configuration");
-  const A = te().length ? ne() : se(a), n = z(A), p = re(A), i = z(A), f = ae(A);
-  return console.log("✅ Firebase initialized:", A.name), { app: A, database: n, storage: p, realtimeDb: i, firestoreDb: f };
-}, [a]), oe = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-pause-icon%20lucide-pause'%3e%3crect%20x='14'%20y='3'%20width='5'%20height='18'%20rx='1'/%3e%3crect%20x='5'%20y='3'%20width='5'%20height='18'%20rx='1'/%3e%3c/svg%3e", Ae = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-play-icon%20lucide-play'%3e%3cpath%20d='M5%205a2%202%200%200%201%203.008-1.728l11.997%206.998a2%202%200%200%201%20.003%203.458l-12%207A2%202%200%200%201%205%2019z'/%3e%3c/svg%3e", le = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-volume2-icon%20lucide-volume-2'%3e%3cpath%20d='M11%204.702a.705.705%200%200%200-1.203-.498L6.413%207.587A1.4%201.4%200%200%201%205.416%208H3a1%201%200%200%200-1%201v6a1%201%200%200%200%201%201h2.416a1.4%201.4%200%200%201%20.997.413l3.383%203.384A.705.705%200%200%200%2011%2019.298z'/%3e%3cpath%20d='M16%209a5%205%200%200%201%200%206'/%3e%3cpath%20d='M19.364%2018.364a9%209%200%200%200%200-12.728'/%3e%3c/svg%3e", ce = "data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20stroke='currentColor'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'%20class='lucide%20lucide-volume-x-icon%20lucide-volume-x'%3e%3cpath%20d='M11%204.702a.705.705%200%200%200-1.203-.498L6.413%207.587A1.4%201.4%200%200%201%205.416%208H3a1%201%200%200%200-1%201v6a1%201%200%200%200%201%201h2.416a1.4%201.4%200%200%201%20.997.413l3.383%203.384A.705.705%200%200%200%2011%2019.298z'/%3e%3cline%20x1='22'%20x2='16'%20y1='9'%20y2='15'/%3e%3cline%20x1='16'%20x2='22'%20y1='9'%20y2='15'/%3e%3c/svg%3e", de = (a) => /* @__PURE__ */ h.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: 24, height: 24, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round", className: "lucide lucide-radio-icon lucide-radio", ...a }, /* @__PURE__ */ h.createElement("path", { d: "M16.247 7.761a6 6 0 0 1 0 8.478" }), /* @__PURE__ */ h.createElement("path", { d: "M19.075 4.933a10 10 0 0 1 0 14.134" }), /* @__PURE__ */ h.createElement("path", { d: "M4.925 19.067a10 10 0 0 1 0-14.134" }), /* @__PURE__ */ h.createElement("path", { d: "M7.753 16.239a6 6 0 0 1 0-8.478" }), /* @__PURE__ */ h.createElement("circle", { cx: 12, cy: 12, r: 2 }));
-async function ue(a = !1) {
+  const o = ee().length ? te() : ne(i), n = V(o), h = Ae(o), a = V(o), g = se(o);
+  return console.log("✅ Firebase initialized:", o.name), { app: o, database: n, storage: h, realtimeDb: a, firestoreDb: g };
+}, [i]);
+async function ue(i = !1) {
   try {
-    const s = await fetch(
-      `https://touch-a-life-dev.web.app/api/v1/talradio/channels?includeAll=${a}`,
+    const A = await fetch(
+      `https://touch-a-life-dev.web.app/api/v1/talradio/channels?includeAll=${i}`,
       {
         method: "GET",
         headers: {
@@ -22,15 +22,15 @@ async function ue(a = !1) {
         }
       }
     );
-    if (!s.ok)
-      throw new Error(`HTTP error! Status: ${s.status}`);
-    return await s.json();
-  } catch (s) {
-    throw console.error("Error fetching channels:", s), s;
+    if (!A.ok)
+      throw new Error(`HTTP error! Status: ${A.status}`);
+    return await A.json();
+  } catch (A) {
+    throw console.error("Error fetching channels:", A), A;
   }
 }
-function G(a = null) {
-  switch (a) {
+function G(i = null) {
+  switch (i) {
     case "telugu":
       return "telugu";
     case "hindi":
@@ -43,58 +43,58 @@ function G(a = null) {
       return "all";
   }
 }
-const me = "data:image/jpeg;base64,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", ge = ({
-  src: a,
-  fallback: s = me,
+const me = "data:image/jpeg;base64,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", fe = ({
+  src: i,
+  fallback: A = me,
   // ✅ use imported default image
-  alt: A = "image",
+  alt: o = "image",
   className: n,
-  style: p
+  style: h
 }) => {
-  const [i, f] = d(a || s), [b, E] = d(!1);
-  return g(() => {
-    a ? (f(a), E(!1)) : f(s);
-  }, [a, s]), /* @__PURE__ */ t(
+  const [a, g] = d(i || A), [w, E] = d(!1);
+  return f(() => {
+    i ? (g(i), E(!1)) : g(A);
+  }, [i, A]), /* @__PURE__ */ t(
     "img",
     {
-      src: i,
-      alt: A,
+      src: a,
+      alt: o,
       onError: () => {
-        i !== s && f(s);
+        a !== A && g(A);
       },
       onLoad: () => E(!0),
-      className: `${n || ""} ${b ? "opacity-100" : "opacity-0"} transition-opacity duration-500`,
-      style: p,
+      className: `${n || ""} ${w ? "opacity-100" : "opacity-0"} transition-opacity duration-500`,
+      style: h,
       loading: "lazy"
     }
   );
-}, he = () => {
-  const [a, s] = d((/* @__PURE__ */ new Date()).getSeconds()), [A, n] = d(/* @__PURE__ */ new Date());
-  g(() => {
+}, ge = () => {
+  const [i, A] = d((/* @__PURE__ */ new Date()).getSeconds()), [o, n] = d(/* @__PURE__ */ new Date());
+  f(() => {
     const m = setInterval(() => {
-      const x = /* @__PURE__ */ new Date();
-      s(x.getSeconds()), x.getSeconds() === 0 && n(x);
+      const C = /* @__PURE__ */ new Date();
+      A(C.getSeconds()), C.getSeconds() === 0 && n(C);
     }, 1e3);
     return () => clearInterval(m);
   }, []);
-  const p = I(
-    () => A.toLocaleTimeString("en-US", {
+  const h = I(
+    () => o.toLocaleTimeString("en-US", {
       hour: "2-digit",
       minute: "2-digit",
       hour12: !0
     }),
-    [A]
-  ), i = I(
-    () => A.toLocaleDateString("en-US", {
+    [o]
+  ), a = I(
+    () => o.toLocaleDateString("en-US", {
       weekday: "short",
       day: "2-digit",
       month: "short",
       year: "numeric"
     }),
-    [A]
-  ), [f, b] = p.split(" "), [E, Q] = f.split(":");
+    [o]
+  ), [g, w] = h.split(" "), [E, N] = g.split(":");
   return /* @__PURE__ */ u("div", { className: "flex justify-between items-center mt-2 text-[11px] text-gray-500 font-mono", children: [
-    /* @__PURE__ */ t("span", { children: i }),
+    /* @__PURE__ */ t("span", { children: a }),
     /* @__PURE__ */ u("div", { className: "flex items-center gap-1", children: [
       /* @__PURE__ */ t("span", { className: "w-2 h-2 bg-red-500 rounded-full animate-pulse" }),
       /* @__PURE__ */ u("div", { className: "flex items-baseline text-gray-700 font-semibold", children: [
@@ -112,10 +112,10 @@ const me = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDw0ND
             children: ":"
           }
         ),
-        /* @__PURE__ */ t("span", { children: Q }),
+        /* @__PURE__ */ t("span", { children: N }),
         /* @__PURE__ */ t("span", { children: ":" }),
-        /* @__PURE__ */ t("span", { className: "ml-1 text-[10px] text-gray-600", children: a.toString().padStart(2, "0") }),
-        /* @__PURE__ */ t("span", { className: "ml-1 text-[10px] opacity-80", children: b })
+        /* @__PURE__ */ t("span", { className: "ml-1 text-[10px] text-gray-600", children: i.toString().padStart(2, "0") }),
+        /* @__PURE__ */ t("span", { className: "ml-1 text-[10px] opacity-80", children: w })
       ] })
     ] }),
     /* @__PURE__ */ t("style", { children: `
@@ -125,149 +125,149 @@ const me = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDw0ND
           }
         ` })
   ] });
-}, fe = (a) => /* @__PURE__ */ h.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: 24, height: 24, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round", className: "lucide lucide-music-icon lucide-music", ...a }, /* @__PURE__ */ h.createElement("path", { d: "M9 18V5l12-2v13" }), /* @__PURE__ */ h.createElement("circle", { cx: 6, cy: 18, r: 3 }), /* @__PURE__ */ h.createElement("circle", { cx: 18, cy: 16, r: 3 })), Ne = ({ firebaseConfig: a }) => {
+}, be = ({ firebaseConfig: i }) => {
   var Y;
-  const [s, A] = d(!1), [n, p] = d(null), [i, f] = d([]), [b, E] = d(""), Q = R(null), m = R(null), x = R(null), M = R(null), { realtimeDb: B, database: pe } = ie(a), X = (e) => {
-    E(G(e)), p(e);
+  const [A, o] = d(!1), [n, h] = d(null), [a, g] = d([]), [w, E] = d(""), N = b(null), m = b(null), C = b(null), U = b(null), { realtimeDb: B, database: he } = de(i), X = (e) => {
+    E(G(e)), h(e);
   };
   console.log("Audio SRC:", (Y = m.current) == null ? void 0 : Y.src);
-  const [Be, we] = d(!1), [C, j] = d(0.5), [U, O] = d(!1), [F, P] = d(null), [o, K] = d(null), [q, D] = d(!1), y = R(null), T = async (e) => {
-    const r = m.current;
-    if (!r || !(o != null && o.downloadUrl)) return;
-    r.load(), r.src = o.downloadUrl;
+  const [Be, pe] = d(!1), [Q, O] = d(0.5), [D, P] = d(!1), [F, q] = d(null), [r, K] = d(null), [j, v] = d(!1), R = b(null), L = async (e) => {
+    const s = m.current;
+    if (!s || !(r != null && r.downloadUrl)) return;
+    s.load(), s.src = r.downloadUrl;
     const l = () => {
-      s && r.play().catch((c) => {
+      A && s.play().catch((c) => {
         console.error("Audio play failed:", c);
       });
     };
     if (e)
       try {
-        const c = w(B, `/seekTime/${n}`), N = await _(c);
-        if (N.exists() && s) {
-          const v = N.val();
-          r.currentTime = v || 0, l();
+        const c = p(B, `/seekTime/${n}`), y = await $(c);
+        if (y.exists() && A) {
+          const x = y.val();
+          s.currentTime = x || 0, l();
         }
       } catch (c) {
         console.error("Error fetching seek time:", c);
       }
     else
-      r.currentTime = 0, l();
+      s.currentTime = 0, l();
   };
-  g(() => {
-    m.current && (m.current.volume = C);
-  }, [C]);
+  f(() => {
+    m.current && (m.current.volume = Q);
+  }, [Q]);
   const W = () => {
     const e = m.current;
-    e && (e.src = "", e.currentTime = 0, s && e.pause()), A(!1);
-  }, H = (e) => {
-    if (!e || !(i != null && i.length)) return;
-    const r = i.find(
+    e && (e.src = "", e.currentTime = 0, A && e.pause()), o(!1);
+  }, k = (e) => {
+    if (!e || !(a != null && a.length)) return;
+    const s = a.find(
       (c) => c.name === e
     );
-    if (!(r != null && r.name)) return;
-    const l = w(
+    if (!(s != null && s.name)) return;
+    const l = p(
       B,
-      `/currentStreaming/${r.name}`
+      `/currentStreaming/${s.name}`
     );
-    F && S(F), ee(l, (c) => {
+    F && z(F), _(l, (c) => {
       c.exists() ? K(c.val()) : (K({ title: "Offline", thumbnailUrl: "" }), W());
-    }), P(l);
+    }), q(l);
   };
-  console.log("LiveRadioWidget", M, x), g(() => {
-    if (!(o != null && o.downloadUrl)) return;
-    const e = x.current !== o.downloadUrl, r = M.current !== n;
-    T(r ? !0 : !e), x.current = o.downloadUrl, M.current = n;
-  }, [o]);
-  const Z = () => {
-    D(!0), ue().then((e) => {
-      D(!1), Array.isArray(e == null ? void 0 : e.data) && e.data.length > 0 && f(e.data);
+  console.log("LiveRadioWidget", U, C), f(() => {
+    if (!(r != null && r.downloadUrl)) return;
+    const e = C.current !== r.downloadUrl, s = U.current !== n;
+    L(s ? !0 : !e), C.current = r.downloadUrl, U.current = n;
+  }, [r]);
+  const H = () => {
+    v(!0), ue().then((e) => {
+      v(!1), Array.isArray(e == null ? void 0 : e.data) && e.data.length > 0 && g(e.data);
     }).catch((e) => {
-      D(!1);
+      v(!1);
     });
-  }, k = () => {
+  }, T = () => {
     let e = "";
-    n || ((i == null ? void 0 : i.length) > 0 && i.forEach((r) => {
-      r.isDefault && (e = r.name);
-    }), E(G(e)), e && p(e));
+    n || ((a == null ? void 0 : a.length) > 0 && a.forEach((s) => {
+      s.isDefault && (e = s.name);
+    }), E(G(e)), e && h(e));
   };
-  return g(() => {
-    n && H(n);
-  }, [n]), g(() => ((i == null ? void 0 : i.length) > 0 ? k() : Z(), () => {
-    F && S(F);
+  return f(() => {
+    n && k(n);
+  }, [n]), f(() => ((a == null ? void 0 : a.length) > 0 ? T() : H(), () => {
+    F && z(F);
     const e = m.current;
-    e && s && e.pause();
-  }), []), g(() => {
-    (i == null ? void 0 : i.length) > 0 && k();
-  }, [i]), g(() => {
+    e && A && e.pause();
+  }), []), f(() => {
+    (a == null ? void 0 : a.length) > 0 && T();
+  }, [a]), f(() => {
     const e = m.current;
     if (!e || !n) return;
-    const r = Math.random().toString(36).slice(2, 10);
-    if (y.current = r, s) {
-      if (T(!0), !n || n === "null" || n === "undefined") {
+    const s = Math.random().toString(36).slice(2, 10);
+    if (R.current = s, A) {
+      if (L(!0), !n || n === "null" || n === "undefined") {
         console.warn(
           "⚠️ Skipping invalid channel for listener registration:",
           n
         );
         return;
       }
-      const l = w(
+      const l = p(
         B,
-        `/talRadioCurrentListeners/${n}/${r}`
+        `/talRadioCurrentListeners/${n}/${s}`
       );
-      J(l, {
+      Z(l, {
         timestamp: Date.now(),
         platform: "web"
-      }).catch((v) => console.error("Failed to set listener:", v)), $(l).remove();
-      const c = w(
+      }).catch((x) => console.error("Failed to set listener:", x)), J(l).remove();
+      const c = p(
         B,
         "/talRadioListenersCount/totalListeners"
-      ), N = w(
+      ), y = p(
         B,
         `/talRadioListenersCount/totalChannelListeners/${n}`
       );
-      V(c, (v) => (v || 0) + 1), V(N, (v) => (v || 0) + 1);
-    } else if (e.pause(), y.current && n) {
-      const l = w(
+      S(c, (x) => (x || 0) + 1), S(y, (x) => (x || 0) + 1);
+    } else if (e.pause(), R.current && n) {
+      const l = p(
         B,
-        `/talRadioCurrentListeners/${n}/${y.current}`
+        `/talRadioCurrentListeners/${n}/${R.current}`
       );
-      L(l).catch(() => {
+      M(l).catch(() => {
       });
     }
     return () => {
-      if (!n || !y.current) return;
-      const l = w(
+      if (!n || !R.current) return;
+      const l = p(
         B,
-        `/talRadioCurrentListeners/${n}/${y.current}`
+        `/talRadioCurrentListeners/${n}/${R.current}`
       );
-      L(l).catch(() => {
+      M(l).catch(() => {
       });
     };
-  }, [s, n]), g(() => {
+  }, [A, n]), f(() => {
     const e = m.current;
-    e && (e.volume = C);
-  }, [C]), g(() => {
-    Q.current && Q.current.style.setProperty("--fill", `${C * 100}%`);
-  }, [C]), g(() => {
-    const e = (r) => {
-      if (s) {
-        const l = y.current;
+    e && (e.volume = Q);
+  }, [Q]), f(() => {
+    N.current && N.current.style.setProperty("--fill", `${Q * 100}%`);
+  }, [Q]), f(() => {
+    const e = (s) => {
+      if (A) {
+        const l = R.current;
         if (l) {
-          const c = w(
+          const c = p(
             B,
             `/talRadioCurrentListeners/${n}/${l}`
           );
-          L(c).catch(
-            (N) => console.error("Error removing listener:", N)
+          M(c).catch(
+            (y) => console.error("Error removing listener:", y)
           );
         }
-        r.preventDefault(), r.returnValue = "";
+        s.preventDefault(), s.returnValue = "";
       }
     };
     return window.addEventListener("beforeunload", e), () => {
       window.removeEventListener("beforeunload", e);
     };
-  }, [s, n]), // <div className="w-full bg-white/30 backdrop-blur-md border border-white/40 rounded-2xl shadow-lg p-6 transition-all duration-300">
+  }, [A, n]), // <div className="w-full bg-white/30 backdrop-blur-md border border-white/40 rounded-2xl shadow-lg p-6 transition-all duration-300">
   //     {/* Header */}
   //     <div className="flex items-center justify-between mb-5">
   //         <h2 className="text-sm font-semibold text-gray-800 flex items-center gap-2">
@@ -391,10 +391,10 @@ const me = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDw0ND
   // </div>
   /* @__PURE__ */ u("div", { className: "tal-radio-container", children: [
     /* @__PURE__ */ t("div", { className: "tal-header", children: /* @__PURE__ */ u("h2", { className: "tal-header-title", children: [
-      /* @__PURE__ */ t(de, { className: "radio-icon" }),
+      /* @__PURE__ */ t(ae, { className: "radio-icon" }),
       "TALRadio – Listen, Feel and Act!"
     ] }) }),
-    /* @__PURE__ */ t("div", { className: "tal-channel-box", children: q ? /* @__PURE__ */ t("div", { className: "text-xs", children: "Loading languages..." }) : /* @__PURE__ */ t("div", { style: { display: "flex" }, children: ["talradio", "hindi", "telugu", "kannada"].map((e) => /* @__PURE__ */ t(
+    /* @__PURE__ */ t("div", { className: "tal-channel-box", children: j ? /* @__PURE__ */ t("div", { className: "text-xs", children: "Loading languages..." }) : /* @__PURE__ */ t("div", { style: { display: "flex" }, children: ["talradio", "hindi", "telugu", "kannada"].map((e) => /* @__PURE__ */ t(
       "button",
       {
         onClick: () => X(e),
@@ -404,64 +404,63 @@ const me = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NDw0ND
       e
     )) }) }),
     /* @__PURE__ */ u("h3", { className: "tal-title", children: [
-      /* @__PURE__ */ t(fe, { className: "music-icon" }),
-      /* @__PURE__ */ t("span", { children: (o == null ? void 0 : o.title) || "Now Playing" })
+      /* @__PURE__ */ t(re, { className: "music-icon" }),
+      /* @__PURE__ */ t("span", { children: (r == null ? void 0 : r.title) || "Now Playing" })
     ] }),
     /* @__PURE__ */ u("div", { className: "tal-main", children: [
       /* @__PURE__ */ u("div", { className: "tal-thumb", children: [
-        /* @__PURE__ */ t(ge, { src: o == null ? void 0 : o.thumbnailUrl }),
-        s && /* @__PURE__ */ t("div", { className: "tal-equalizer", children: [0, 1, 2, 3].map((e) => /* @__PURE__ */ t("div", { style: { animationDelay: `${e * 0.15}s` } }, e)) })
+        /* @__PURE__ */ t(fe, { src: r == null ? void 0 : r.thumbnailUrl }),
+        A && /* @__PURE__ */ t("div", { className: "tal-equalizer", children: [0, 1, 2, 3].map((e) => /* @__PURE__ */ t("div", { style: { animationDelay: `${e * 0.15}s` } }, e)) })
       ] }),
       /* @__PURE__ */ u("div", { className: "tal-details", children: [
         /* @__PURE__ */ u("p", { className: "tal-meta", children: [
           "Producer: ",
-          (o == null ? void 0 : o.producer) || "Unknown"
+          (r == null ? void 0 : r.producer) || "Unknown"
         ] }),
         /* @__PURE__ */ u("p", { className: "tal-meta", children: [
           "RJ: ",
-          (o == null ? void 0 : o.rjUserId) || "Unknown"
+          (r == null ? void 0 : r.rjUserId) || "Unknown"
         ] }),
         /* @__PURE__ */ u("div", { className: "tal-controls", children: [
-          s ? /* @__PURE__ */ t(
+          A ? /* @__PURE__ */ t(
             "button",
             {
-              onClick: () => A(!1),
+              onClick: () => o(!1),
               className: "tal-circle-btn pause",
-              children: /* @__PURE__ */ t("img", { src: oe, className: "tal-icon" })
+              children: /* @__PURE__ */ t(ie, { className: "tal-icon" })
             }
           ) : /* @__PURE__ */ t(
             "button",
             {
-              onClick: () => A(!0),
+              onClick: () => o(!0),
               className: "tal-circle-btn play",
-              children: /* @__PURE__ */ t("img", { src: Ae, className: "tal-icon" })
+              children: /* @__PURE__ */ t(oe, { className: "tal-icon" })
             }
           ),
-          /* @__PURE__ */ t("button", { onClick: () => O(!U), className: "tal-mute-btn", children: /* @__PURE__ */ t("img", { src: U ? ce : le, className: "volume-icon" }) }),
+          /* @__PURE__ */ t("button", { onClick: () => P(!D), className: "tal-mute-btn", children: D ? /* @__PURE__ */ t(le, { className: "volume-icon" }) : /* @__PURE__ */ t(ce, { cclassName: "volume-icon" }) }),
           /* @__PURE__ */ t(
             "input",
             {
-              ref: Q,
+              ref: N,
               type: "range",
               min: 0,
               max: 1,
               step: 0.01,
-              value: C,
+              value: Q,
               onChange: (e) => {
-                const r = parseFloat(e.target.value);
-                j(r), e.target.style.setProperty("--fill", `${r * 100}%`);
+                const s = parseFloat(e.target.value);
+                O(s), e.target.style.setProperty("--fill", `${s * 100}%`);
               },
               className: "custom-volume-slider"
             }
           )
         ] }),
-        /* @__PURE__ */ t(he, {})
+        /* @__PURE__ */ t(ge, {})
       ] })
     ] }),
-    /* @__PURE__ */ t("audio", { ref: m, muted: U, preload: "auto", loop: !0 })
+    /* @__PURE__ */ t("audio", { ref: m, muted: D, preload: "auto", loop: !0 })
   ] });
 };
 export {
-  Ne as LiveRadioWidget
+  be as LiveRadioWidget
 };
-//# sourceMappingURL=index.esm.js.map
